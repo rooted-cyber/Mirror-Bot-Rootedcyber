@@ -16,7 +16,7 @@ if [ "$ar" == "y" ] || [ "$ar" == "Y" ];then
 random
 printf "\n Saving your \033[0m config.env "
 fi
-if [ "$ar" == "n" ] || [ "$a" == "N" [;then
+if [ "$ar" == "n" ] || [ "$a" == "N" ];then
 random
 printf "\n Refill config.env\n"
 sleep 5
@@ -146,7 +146,7 @@ fi
 imb () {
 fol
 cd mbot
-if [ -e "Config.env" ];then
+if [ -e "config.env" ];then
 ctp
 else
 random
