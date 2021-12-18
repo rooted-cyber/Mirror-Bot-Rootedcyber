@@ -102,8 +102,8 @@ SERVER_PORT = "80"  # Only For VPS even if IS_VPS is False
 WEB_PINCODE = ""
 QB_SEED = "" # Seed torrent to specific ratio or specific time, edit vars in qbittorrent config and don't change maxratioaction
 # GDTOT COOKIES
-PHPSESSID = "360por7j8nqoklf6cg9aba32lt"
-CRYPT = "MkNOa3FldHUzaGU0UVBPUkNLdXhVUHFDQXhpZmtGNHFEbnRDRktvUjQ2RT0%3D"
+PHPSESSID = "osj632m5slu25l4vbtdidprou3"
+CRYPT = "L1pnRmxHclF4S2JzMkhHTmV0YXFQNDdtdXM5UlVueDFOT1NxYzVmUzhvUT0%3D"
 # If you don't know what are below entries, simply leave them, Don't fill anything in them.
 BUTTON_THREE_NAME = "Mirror-Bot Repo"
 BUTTON_THREE_URL = "https://github.com/rooted-cyber/fol"
@@ -135,6 +135,7 @@ esac
 }
 ctp() {
 if [ -e "token.pickle" ];then
+git pull
 bash heroku_push.sh
 else
 random
