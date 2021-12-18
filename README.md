@@ -12,5 +12,4 @@
  </pre>
  
  ## Any problem join my Group 
- [!https://img.shields.io/badge/Telegram-black?style=for-the-badge&logo=Telegram](https://t.me/rootedcybergroupp)
- 
+ <a href="https://t.me/rootedcybergroupp"><img title="Telegram Group" src="https://img.shields.io/badge/Telegram-black?style=for-the-badge&logo=Telegram"></a>
