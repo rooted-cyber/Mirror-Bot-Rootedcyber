@@ -60,6 +60,10 @@ fi
 random
 printf "\n Unzip \n"
 cd ~/Mirror-Bot-Rootedcyber
+if [ -e "mbot" ];then
+echo "Already unzip"
+else
 unzip mbot.zip -d mbot
+fi
 }
 se
