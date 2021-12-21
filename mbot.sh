@@ -31,9 +31,7 @@ printf "
 \033[1;92m 
 BOT_TOKEN
 GDRIVE_FOLDER_ID
-OWNER_ID
-TELEGRAM_API
-TELEGRAM_HASH\n\n"
+OWNER_ID\n\n"
 echo -e -n "\033[1;93m BOT_TOKEN \033[0m"
 read a
 if [ $a ];then
@@ -44,21 +42,13 @@ fi
 if [ $b ];then
 echo
 echo -e -n "\033[1;93m OWNER_ID \033[0m"
-read c
-fi
-if [ $c ];then
-echo
-echo -e -n "\033[1;93m TELEGRAM_API \033[0m"
-read d
-fi
-if [ $d ];then
-echo
-echo -e -n "\033[1;93m TELEGRAM_HASH \033[0m"
 read e
 fi
 if [ $e ];then
 arh
+fol
 cd mbot
+rm -f config_sample.env
 cat >> config.env << EOF
 BOT_TOKEN = "$a"
 GDRIVE_FOLDER_ID = "$b"
@@ -67,8 +57,8 @@ DOWNLOAD_DIR = "/home/username/mirror-bot/downloads"
 DOWNLOAD_STATUS_UPDATE_INTERVAL = 5
 AUTO_DELETE_MESSAGE_DURATION = 20
 IS_TEAM_DRIVE = "false"
-TELEGRAM_API = "$d"
-TELEGRAM_HASH = "$e"
+TELEGRAM_API = "3704772"
+TELEGRAM_HASH = "b8e50a035abb851c0dd424e14cac4c06"
 USE_SERVICE_ACCOUNTS = ""
 
 # Optional config
@@ -133,9 +123,16 @@ case $he in
 *)hlo ;;
 esac
 }
+cch() {
+cd /sdcard
+if [ -e "config.sh" ];then
+cp -f config.sh ~/Mirror*Rooted*/mbot/config.env
+fi
+}
 ctp() {
 if [ -e "token.pickle" ];then
-git pull
+git pull > /dev/null 2>&1
+cch
 bash heroku_push.sh
 else
 random
@@ -149,14 +146,51 @@ cd mbot
 if [ -e "config.env" ];then
 ctp
 else
-random
-printf "\n First Fill config.env !!! \n\n\n"
-exit
+cch
+ctp
 fi
 }
+ecf() {
+fol
+cd mbot
+if [ -e "config_sample.env" ];then
+cp -f config_sample.env /sdcard/config.sh
+xdg-open /sdcard/config.sh
+rm -f config_sample.env
+fi
+if [ -e "config.env" ];then
+cp -f config.env /sdcard/config.sh
+xdg-open /sdcard/config.sh
+fi
+}
+
 cvid() {
 random
-printf "\n Coming Soon !!! "
+printf "\n BOT_TOKEN :
+
+Youtube link :\033[0m https://youtu.be/TFWgeijMVbs
+
+"
+random
+echo -e "Download Link :\033[0m https://sourceforge.net/projects/rootedcyber-phone/files/Record%20video/Bot_Token.mp4/download"
+
+random
+printf "GFOLDER_ID :
+
+Youtube link :\033[0m"
+
+
+random
+echo -e "Download link :\033[0m https://sourceforge.net/projects/rootedcyber-phone/files/Record%20video/GDRIVE%20FOLDER%20ID.mp4/download"
+
+random
+printf "token.pickle :
+
+Youtube link :\033[0m https://youtu.be/OpRXrYEf-fU
+"
+random
+echo -e "Download link :\033[0m https://sourceforge.net/projects/rootedcyber-phone/files/Record%20video/token.pickle.mp4/download"
+
 }
 menu() {
 bann
@@ -164,8 +198,9 @@ printf "\n\033[1;91m[\033[0m1\033[1;91m]\033[1;93m Login Heroku"
 printf "\n\033[1;91m[\033[0m2\033[1;91m]\033[1;93m Install Mirror-Bot"
 printf "\n\033[1;91m[\033[0m3\033[1;91m]\033[1;93m Update bot"
 printf "\n\033[1;91m[\033[0m4\033[1;91m]\033[1;93m Fill config.env"
-printf "\n\033[1;91m[\033[0m5\033[1;91m]\033[1;93m Config.env setup video"
-printf "\n\033[1;91m[\033[0m6\033[1;91m]\033[1;93m Exit\n\n"
+printf "\n\033[1;91m[\033[0m5\033[1;91m]\033[1;93m Edit config.env in file manager"
+printf "\n\033[1;91m[\033[0m6\033[1;91m]\033[1;93m Config.env setup video"
+printf "\n\033[1;91m[\033[0m7\033[1;91m]\033[1;93m Exit\n\n"
 echo -e -n "\033[1;96m Bot\033[0m -->> "
 read bo
 case $bo in
@@ -173,7 +208,9 @@ case $bo in
 2)imb ;;
 3)imb ;;
 4)fco ;;
-5)cvid ;;
+5)ecf ;;
+6)cvid ;;
+7)exit ;;
 *)menu ;;
 esac
 }
