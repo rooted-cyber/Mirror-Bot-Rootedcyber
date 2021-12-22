@@ -227,6 +227,7 @@ echo -e "Download link :\033[0m https://sourceforge.net/projects/rootedcyber-pho
 }
 menu() {
 bann
+check
 printf "\n\033[1;91m[\033[0m1\033[1;91m]\033[1;93m Login Heroku"
 printf "\n\033[1;91m[\033[0m2\033[1;91m]\033[1;93m Install Mirror-Bot"
 printf "\n\033[1;91m[\033[0m3\033[1;91m]\033[1;93m Update bot"
