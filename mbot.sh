@@ -15,7 +15,6 @@ if [ -e "Mirror-Bot-Rootedcyber" ];then
 sch
 else
 printf "\n Clone this repo in home directory\n"
-exit
 fi
 }
 bann() {
@@ -143,13 +142,18 @@ esac
 cch() {
 cd /sdcard
 if [ -e "config.sh" ];then
-cp -f config.sh ~/Mirror*Rooted*/mbot/config.env
+cp -f config.sh ~/Mirror-Bot-Rootedcyber/mbot/config.env
 fi
 }
 ctp() {
+fol
+cd mbot
 if [ -e "token.pickle" ];then
+ls tok*
 git pull > /dev/null 2>&1
 cch
+fol
+cd mbot
 bash heroku_push.sh
 else
 random
@@ -180,7 +184,7 @@ cp -f config.env /sdcard/config.sh
 xdg-open /sdcard/config.sh
 fi
 }
-ctp() {
+ctpp() {
 random
 printf "\n Copy your token.pickle in this directory\033[1;91m (\033[0m \sdcard/Rootedcyber-file\033[1;91m)"
 read
@@ -234,7 +238,7 @@ printf "\n\033[1;91m[\033[0m2\033[1;91m]\033[1;93m Install Mirror-Bot"
 printf "\n\033[1;91m[\033[0m3\033[1;91m]\033[1;93m Update bot"
 printf "\n\033[1;91m[\033[0m4\033[1;91m]\033[1;93m Fill config.env"
 printf "\n\033[1;91m[\033[0m5\033[1;91m]\033[1;93m Edit config.env in file manager"
-printf "\n\033[1;91m[\033[0m6\033[1;91m]\033[1;93m Copy toke.pickle"
+printf "\n\033[1;91m[\033[0m6\033[1;91m]\033[1;93m Copy token.pickle"
 printf "\n\033[1;91m[\033[0m7\033[1;91m]\033[1;93m Config.env setup video"
 printf "\n\033[1;91m[\033[0m8\033[1;91m]\033[1;93m Exit\n\n"
 echo -e -n "\033[1;96m Bot\033[0m -->> "
@@ -245,7 +249,7 @@ case $bo in
 3)imb ;;
 4)fco ;;
 5)ecf ;;
-6)ctp ;;
+6)ctpp ;;
 7)cvid ;;
 8)exit ;;
 *)menu ;;
