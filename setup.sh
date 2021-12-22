@@ -72,4 +72,12 @@ else
 mkdir Rootedcyber-file
 fi
 }
+chs() {
+cd ~
+if [ -e "Mirror-Bot-Rootedcyber" ];then
 se
+else
+printf "\n Clone this repo in home directory\n"
+fi
+}
+chs

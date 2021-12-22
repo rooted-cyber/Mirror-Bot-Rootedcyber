@@ -1,6 +1,22 @@
 fol() {
 cd ~/Mirror-Bot-Rootedcyber
 }
+sch() {
+fol
+if [ -e "mbot" ];then
+echo
+else
+bash setup.sh
+fi
+}
+check() {
+cd ~
+if [ -e "Mirror-Bot-Rootedcyber" ];then
+sch
+else
+printf "\n Clone this repo in home directory\n"
+fi
+}
 bann() {
 echo
 echo
