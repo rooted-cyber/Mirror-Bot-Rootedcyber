@@ -65,5 +65,11 @@ echo "Already unzip"
 else
 unzip mbot.zip -d mbot
 fi
+cd /sdcard
+if [ -e "Rootedcyber-file" ];then
+echo
+else
+mkdir Rootedcyber-file
+fi
 }
 se

@@ -163,6 +163,23 @@ cp -f config.env /sdcard/config.sh
 xdg-open /sdcard/config.sh
 fi
 }
+ctp() {
+random
+printf "\n Copy your token.pickle in this directory\033[1;91m (\033[0m \sdcard/Rootedcyber-file\033[1;91m)"
+read
+cd /sdcard/Rootedcyber-file
+if [ -e "token.pickle" ];then
+random
+printf "\n Coping....\n"
+sleep 1
+cp -f token.pickle ~/Mirror*Rooted*/mbot
+random
+printf "\n Copied successfully\n"
+else
+random
+printf "\n Not found any token.pickle\n\n"
+fi
+}
 
 cvid() {
 random
@@ -199,8 +216,9 @@ printf "\n\033[1;91m[\033[0m2\033[1;91m]\033[1;93m Install Mirror-Bot"
 printf "\n\033[1;91m[\033[0m3\033[1;91m]\033[1;93m Update bot"
 printf "\n\033[1;91m[\033[0m4\033[1;91m]\033[1;93m Fill config.env"
 printf "\n\033[1;91m[\033[0m5\033[1;91m]\033[1;93m Edit config.env in file manager"
-printf "\n\033[1;91m[\033[0m6\033[1;91m]\033[1;93m Config.env setup video"
-printf "\n\033[1;91m[\033[0m7\033[1;91m]\033[1;93m Exit\n\n"
+printf "\n\033[1;91m[\033[0m6\033[1;91m]\033[1;93m Copy toke.pickle"
+printf "\n\033[1;91m[\033[0m7\033[1;91m]\033[1;93m Config.env setup video"
+printf "\n\033[1;91m[\033[0m8\033[1;91m]\033[1;93m Exit\n\n"
 echo -e -n "\033[1;96m Bot\033[0m -->> "
 read bo
 case $bo in
@@ -209,8 +227,9 @@ case $bo in
 3)imb ;;
 4)fco ;;
 5)ecf ;;
-6)cvid ;;
-7)exit ;;
+6)ctp ;;
+7)cvid ;;
+8)exit ;;
 *)menu ;;
 esac
 }
