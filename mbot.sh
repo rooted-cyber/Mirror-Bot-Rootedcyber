@@ -15,6 +15,7 @@ if [ -e "Mirror-Bot-Rootedcyber" ];then
 sch
 else
 printf "\n Clone this repo in home directory\n"
+exit
 fi
 }
 bann() {
